@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+        /* Chat containers */
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+/* Clear floats */
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Style images */
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Style the right image */
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+	</style>
+
+	<div class="example-wrapper" id="data-pre">
+
+		{# {% for book in bookdata %}
+			<h3>
+				{{book.name}}</h3>
+		{% endfor %} #}
+
+		{# <div class="container">
+			<img src="image/user1.jpg" alt="user1">
+			<p>Hello. How are you today?</p>
+			<span class="time-right">11:00</span>
+		</div> #}
+
+		{# <div class="container darker">
+			<img src="image/user2.png" alt="user2" class="right">
+			<p>Hey! I'm fine. Thanks for asking!</p>
+			<span class="time-left">11:01</span>
+		</div> #}
+        <div style="width:100%;"> 
+        <input type="text" style="width:100%;height:40px;" placeholder="enter message" id="myInput">
+        </div>
+        {% for smsg in msgArr %}
+        <p>{{smsg.userId}} ..{{smsg.message}} </p>
+        {% endfor %}
+
+	</div>
+  <script src="js/index.js"></script>
+
+{% endblock %}
